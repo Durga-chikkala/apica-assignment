@@ -68,6 +68,7 @@ func (s *Store) Set(cache *models.CacheData) map[string]*models.CacheData {
 	return s.cache.Cache
 }
 
+// Delete removes the cache entry associated with the specified key.
 func (s *Store) Delete(key string) map[string]*models.CacheData {
 	s.cache.Mutex.Lock()
 	defer s.cache.Mutex.Unlock()
@@ -90,6 +91,7 @@ func (s *Store) Delete(key string) map[string]*models.CacheData {
 	return s.cache.Cache
 }
 
+// GetAllKeys returns a map containing all keys in the cache along with their associated cache data.
 func (s *Store) GetAllKeys() map[string]*models.CacheData {
 	return s.cache.Cache
 }
