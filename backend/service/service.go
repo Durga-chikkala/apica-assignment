@@ -23,10 +23,12 @@ func (s Service) Set(cache *models.CacheData) map[string]*models.CacheData {
 	return s.lruCacherStore.Set(cache)
 }
 
+// Delete removes the value associated with the given key from the store's LRU cache.
 func (s Service) Delete(key string) map[string]*models.CacheData {
 	return s.lruCacherStore.Delete(key)
 }
 
+// GetAllKeys retrieves all the keys from the store's LRU cache.
 func (s Service) GetAllKeys() map[string]*models.CacheData {
 	return s.lruCacherStore.GetAllKeys()
 }
