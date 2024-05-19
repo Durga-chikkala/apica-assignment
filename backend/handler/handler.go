@@ -87,6 +87,7 @@ func (h *Handler) Set(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(models.Success{Data: "Successfully inserted"})
 }
 
+// Delete handles HTTP DELETE request removes the cache entry associated with the specified key
 func (h *Handler) Delete(w http.ResponseWriter, r *http.Request) {
 	vars := mux.Vars(r)
 	key := vars["key"]
@@ -105,6 +106,7 @@ func (h *Handler) Delete(w http.ResponseWriter, r *http.Request) {
 	json.NewEncoder(w).Encode(models.Success{Data: "Deleted successfully"})
 }
 
+// GetAllKeys handles HTTP GET request returns a map containing all keys in the cache along with their associated cache data.
 func (h *Handler) GetALLKeys(w http.ResponseWriter, r *http.Request) {
 	keys := h.s.GetAllKeys()
 	h.socket.UpgradeHandler(w, r)
