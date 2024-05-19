@@ -1,0 +1,39 @@
+.navbar-container{
+    display: flex;
+    width:25%;
+    justify-content: space-evenly;
+    margin: auto;
+    height: 10vh;
+    align-items: center;
+    background-color: #1E3A8A;
+    color:white;
+    border-bottom-left-radius: 50%;
+    border-bottom-right-radius: 50%;
+
+}
+
+.navbar-container p{
+ cursor: pointer;
+}
+
+.active{
+    font-weight: bold;
+}
+
+.active::before{
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: orange;
+    border-radius: 50%;
+    top:15px;
+    left:50%;
+    position: relative;
+}
+
+@media (max-width:480px) {
+    .navbar-container{
+        width: 90%;
+    }
+}
